@@ -29,7 +29,7 @@ def pick_a_music_file():
     
 
 
-updater = Updater("5567332258:AAGXVDsJSrNTQCUqEHzrcZM_QqHcf4Ca9mA",
+updater = Updater("your telegram bot id",
                   use_context=True)
 def start(update: Update, context: CallbackContext):
     update.message.reply_text("Hello, I am a clock alarm bot.")
