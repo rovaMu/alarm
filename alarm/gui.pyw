@@ -29,7 +29,7 @@ def pick_a_music_file():
     
 
 
-updater = Updater("your telegram bot id",
+updater = Updater("5567332258:AAGXVDsJSrNTQCUqEHzrcZM_QqHcf4Ca9mA",
                   use_context=True)
 def start(update: Update, context: CallbackContext):
     update.message.reply_text("Hello, I am a clock alarm bot.")
@@ -83,7 +83,6 @@ updater.start_polling()
 
 def clock(alarm_time):
     while True:
-        time.sleep(1)
         current_time = datetime.datetime.now()
         now = current_time.strftime("%H:%M")
         date = current_time.strftime("%d/%m/%Y")
@@ -149,6 +148,13 @@ minTime= Entry(window,textvariable = min,width = 15).place(x=135,y=75)
 
 submit = Button(window,text = "Set Alarm",width = 15,command = time_now).place(x =90,y=110)
 settings = Button(window,text = "Change song",width = 10, command=pick_a_music_file).place(x =220,y=170)
-timerw_format=Label(window, text= "Current time is:" + datetime.datetime.now().strftime("%H:%M")).place(x =90,y=150)
+def time():
+    string = datetime.datetime.now().strftime('%H:%M')
+    mark.config(text = string)
+    mark.after(1000, time)
+mark = Label(window)
+mark.place(#center down
+x = 120, y = 180)
+time()
 
 window.mainloop()
